@@ -1,0 +1,9 @@
+@mixin link {
+  @include transition( color 0.2s );
+  &, &:visited { color: $link-color; }
+  &:hover { color: $link-hover-color; }
+} // @mixin link
+
+@mixin nav-link {
+  @include bevel( horizontal );
+}

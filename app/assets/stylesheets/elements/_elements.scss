@@ -1,0 +1,52 @@
+// visual styles for basic elemens
+// no positional styling
+
+// some element-styles need their own files
+@import "elements/buttons";
+@import "elements/links";
+@import "elements/lists";
+@import "elements/forms";
+@import "elements/checkbox_radio";
+@import "elements/tables";
+
+// ui elements
+@import "elements/palette_swatch";
+
+@mixin body-style {
+  background: $body-bg;
+  @include typestyle( bodycopy );
+  text-shadow: $body-text-shadow;
+  font-family: $body-font-family;
+}//@mixin
+
+@mixin header-style {
+  @include background( $header-bg );
+  border-bottom: $bevel-dark-border;
+}//@mixin
+
+@mixin hr-style {
+  border-top: $bevel-dark-border;
+  border-bottom: $bevel-light-border;
+  border-right: none;
+  border-left: none;
+}//@mixin
+
+@mixin em-style { font-style: $em-font-style; }
+@mixin strong-style { font-weight: $bold; }
+
+$blockquote-padding: 20px 10px;
+@mixin blockquote-style {
+  padding: $blockquote-padding;
+  &:before, &:after { content: " \"\ "; }
+}//@mixin
+
+@mixin selection-pseudo-style {
+  color: $selection-text-color;
+  background: $selection-bg-color;
+  text-shadow: none;
+}//@mixin
+
+@mixin code-style {
+  overflow: hidden;
+  @include typestyle( codecopy );
+}//@mixin

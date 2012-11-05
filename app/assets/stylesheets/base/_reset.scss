@@ -1,0 +1,48 @@
+// css reset based on the work by eric meyer
+html,body{position:relative;height:100%;min-height:100%;width:100%;line-height:1;}
+html,body,div,span,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video,output, applet,object,iframe,p,blockquote,pre,code,a,abbr,acronym,address,big,cite,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,del,dfn,table,tbody,tfoot,thead,tr,th,td,tt,var,b,u,i,center,dl,dt,dd,ul,ol,li,label,legend,caption,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea, keygen, select,button,button::-moz-focus-inner,isindex,hr{margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset, img, abbr, acronyminput, input,textarea{border:0;border:none;outline:none;}
+address,caption,cite,code,dfn,th,var {font-style:normal;font-weight:normal;}
+ol,ul,li{list-style:none;list-style-type:none;list-style-position: inside;}
+caption,th,input,textarea {text-align:left;}
+em, strong {font-style: normal; font-weight: normal;}
+h1,h2,h3,h4,h5,h6 {font-size:1.0em;font-weight:normal;}
+q:before,q:after,blockquote:before,blockquote:after {content:'';content:none;quotes:none;}
+a, a:hover, a:visited, a:active, a:link {text-decoration:none;}
+form {display: block;}
+textarea:focus, input:focus, select:focus {outline: none;}
+input, textarea, keygen, select, button, isindex { font: inherit; color: inherit; letter-spacing: inherit; word-spacing: inherit; text-transform: none; text-indent: 0; text-shadow: inherit; display: inline-block; text-align: inherit; border: none; }
+textarea, input { line-height: normal; }
+keygen, select, button, isindex, input[type=submit], input[type=button] { line-height: inherit; }
+pre, code {line-height:1;}
+// html5 block elements
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
+audio:not([controls]) { display: none; }
+svg:not(:root) { overflow: hidden; }
+[hidden] { display: none; }
+.clear, .clearfloat {clear:both;}
+// save your sanity
+input[type=checkbox],
+input[type=radio],
+input[type=search],
+input[type=submit],
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+   -moz-appearance: none;
+    -ms-appearance: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { margin: 0; }
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0, .0);
+  -webkit-box-sizing: border-box;
+   -khtml-box-sizing: border-box;
+    -icab-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}

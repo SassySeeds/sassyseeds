@@ -1,0 +1,125 @@
+// typefaces are imported in application.scss per w3 rules: https://github.com/chriseppstein/compass/issues/639
+// exo - http://www.google.com/webfonts#UsePlace:use/Collection:Exo:300,400,600,700,800,300italic,400italic,600italic,700italic,800italic
+
+//---------------------------------
+// font-families
+$sans-fallback: Arial, Sans-Serif;
+$exo: 'Exo', $sans-fallback;
+$source-sans: 'Source Sans Pro', $sans-fallback;
+$sans: $exo;
+$serif: serif;
+$mono: "lucida console", mono;
+$body-font-family: $sans;
+
+
+//-------------------
+// font weights
+$light: 200;
+$book: 300;
+$normal: 400;
+$medium: 500;
+$demi: 600;
+$bold: 700;
+$extra-bold: 800;
+$ultra-bold: 900;
+
+//--------------------------
+// font-styles
+$blockquote-font-style: italic;
+$em-font-style: italic;
+$strong-font-weight: $bold;
+
+//-----------------------------
+// font-colors
+$light-text-color: $white;
+$dark-text-shadow: 0 -1px rgba($blackblue, .3);
+$dark-text-color: $bodycopy-dark-text-color;
+$light-text-shadow: 0 -1px rgba($white, .3);
+
+@mixin light-text {
+  color: $light-text-color;
+  text-shadow: $dark-text-shadow;
+}//@mixin
+
+@mixin dark-text {
+  color: $dark-text-color;
+  text-shadow: $light-text-shadow;
+}//@mixin
+
+@mixin typestyle( $style ) {
+
+ @if $style == hero-thick {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: $demi;
+    color: $h136-color;
+  }//@if
+
+   @if $style == hero-thin {
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 200;
+    color: $h136-color;
+  }//@if
+
+   @if $style == h1 {
+    font-size: 36px;
+    line-height: 52px;
+    font-weight: $demi;
+    color: $h136-color;
+  }//@if
+
+  @if $style == h2 {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: $medium;
+    color: $h245-color;
+  }//@if
+
+  @if $style == h3 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: $medium;
+    color: $h136-color;
+  }//@if
+
+  @if $style == h4 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: $demi;
+    color: $h245-color;
+  }//@if
+
+  @if $style == h5 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: $demi;
+    color: $h245-color;
+  }//@if
+
+  @if $style == h6 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $bold;
+    color: $h136-color;
+  }//@if
+
+  @if $style == bodycopy {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $normal;
+    color: $bodycopy-color;
+  }//@if
+
+  @if $style == codecopy {
+    font-size: 12px;
+    line-height: 1;
+    font-weight: $normal;
+  }//@if
+
+}//@mixin
+
+//------------------------------
+// unicode characters
+$checkmark-unicode: \2713;
+$radio-circle-unicode: \25C9;

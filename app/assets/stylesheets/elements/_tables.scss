@@ -1,0 +1,46 @@
+//----------------------------------
+// Display property and tables
+//
+// Display is positional and can have too great an effect on layouts.
+// due to this, the display property has been left out of the mixin.
+//
+// To use padding on a table element, display must be:
+// display: block
+// OR
+// display: inline-block
+//
+// Note that display: table will not accept padding. ( At the time of this writing ).
+//
+
+$table-border-radius: $border-radius;
+$table-shadow-blur: 8px;
+$table-shadow-spread: 0;
+$table-shadow-length: $table-shadow-spread + $table-shadow-blur;
+$table-bg: $body-bg; //override in theme file.
+
+@mixin table-style {
+  position: relative; //default to control ::before position.
+  padding: 10px 20px;
+  border-top: $bevel-light-border;
+  @include border-radius( $table-border-radius $table-border-radius 0 0 );
+  background: $table-bg;
+
+  &:before {
+    content: "table before";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: $table-shadow-length;
+    left: 0;
+    @include border-radius( $table-border-radius $table-border-radius 0 0 );
+    @include box-shadow( 0 0 $table-shadow-blur $table-shadow-spread rgba(0,0,0, .4) );
+  }//&:before
+
+}//@mixin
+
+@mixin table-cell-style {
+  padding: 10px 20px;
+  border-bottom: $bevel-light-border;
+  @include box-shadow( inset 0 -1px 0 0 $bevel-color-dark );
+}//@mixin

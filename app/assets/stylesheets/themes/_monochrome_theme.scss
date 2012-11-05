@@ -1,0 +1,75 @@
+//-----------------------------------------
+// light monochrome
+$h136-color: $h136-dark-text-color;
+$h245-color: $h245-dark-text-color;
+$bodycopy-color: $bodycopy-dark-text-color;
+$body-text-shadow: $light-text-shadow;
+$body-bg-color: $off-white;
+$bevel-color-light: rgba( $white, .8);
+$bevel-color-dark: rgba(0,0,0, 0.2);
+$bevel-light-border: 1px solid $bevel-color-light;
+$bevel-dark-border: 1px solid $bevel-color-dark;
+//-------------------------------------
+
+//-----------------------------------------
+// dark monochrome
+//
+// uncomment these variables to view the changes
+//
+// $h136-color: $h136-light-text-color;
+// $h245-color: $h245-light-text-color;
+// $bodycopy-color: $bodycopy-light-text-color;
+// $body-text-shadow: $dark-text-shadow;
+// $body-bg-color: #333;
+// $bevel-color-light: rgba($white, 0.1);
+// $bevel-color-dark: rgba(0,0,0, 0.6);
+// $bevel-light-border: 1px solid $bevel-color-light;
+// $bevel-dark-border: 1px solid $bevel-color-dark;
+//-----------------------------------------
+
+
+//-----------------------------------------
+// universal monochrome
+
+// body
+$body-bg-texture: $noise;
+$body-bg: $body-bg-color $body-bg-texture;
+
+// header
+$header-bg-gradient-base: $body-bg-color;
+$header-bg-gradient-stop-1: darken($header-bg-gradient-base, 4);
+$header-bg-gradient-stop-2: darken($header-bg-gradient-base, 8);
+$header-bg-color: linear-gradient( top, $header-bg-gradient-stop-1, $header-bg-gradient-stop-2 );
+$header-bg-texture: $noise;
+$header-bg: $header-bg-texture, $header-bg-color;
+
+// links
+$link-color: $lightblue;
+$link-hover-color: lighten($link-color, 10);
+
+// global border-radius for buttons and forms
+$border-radius: 4px;
+
+// buttons
+$button-default-bg-color: $body-bg-color;
+$button-default-text-color: $bodycopy-color;
+$button-default-text-shadow: $body-text-shadow;
+
+// forms
+$input-bg: darken($body-bg-color, 3);
+$text-input-bg: $input-bg;
+$text-input-bg-focus: darken($text-input-bg, 3);
+$text-input-border-color: darken($body-bg-color, 10);
+$text-input-border-color-hover: darken($text-input-border-color, 10);
+$text-input-border: 1px solid $text-input-border-color;
+$unchecked-bg: $input-bg;
+$checked-bg: $input-bg;
+
+// pseudo selected state
+$selection-bg-color: $bodycopy-color;
+$selection-text-color: $body-bg-color;
+
+// table
+$table-bg-texture: $body-bg-texture;
+$table-bg-color: $body-bg-color;
+$table-bg: $table-bg-texture $table-bg-color;

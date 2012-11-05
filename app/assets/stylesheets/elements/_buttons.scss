@@ -1,0 +1,38 @@
+// one button mixin to rule them all.
+//
+$button-padding: 8px 14px;
+$button-border-radius: $border-radius;
+$button-shadow: inset 0 1px 3px 0 rgba(0,0,0, 0.7);
+$button-default-bg-color: $body-bg-color;
+$button-default-text-color: $bodycopy-color;
+$button-default-text-shadow: $body-text-shadow;
+
+
+@mixin button( $color: $button-default-bg-color, $type: "" ) {
+  display: inline-block;
+  cursor: pointer;
+  padding: $button-padding;
+  text-align: center;
+  color: $button-default-text-color;
+  text-shadow: $button-default-text-shadow;
+  @include user-select( none );
+  @include border-radius( $button-border-radius );
+  @include box-shadow( $button-shadow );
+  @include button-bg-static( $button-bg-color: $color );
+  &:hover, &:focus { @include button-bg-hover( $button-bg-color: $color ); }
+  &:active { @include button-bg-active( $button-bg-color: $color ); }
+
+  @if $type == multibutton {
+    @include border-radius( 0 );
+    &:first-of-type { @include border-radius( $button-border-radius 0 0 $button-border-radius ); }
+    &:last-of-type  { @include border-radius( 0 $button-border-radius $button-border-radius 0 ); }
+  }//@if
+}//@mixin
+
+
+//--------------------------------
+// button-bgs
+@function button-bg-stop-2( $button-bg-stop-2 ) { @return darken( $button-bg-stop-2, 12); }
+@mixin button-bg-static   ( $button-bg-color: $button-default-bg-color ) { @include background( linear-gradient(top, $button-bg-color, button-bg-stop-2($button-bg-color) ) ); }
+@mixin button-bg-hover    ( $button-bg-color: $button-default-bg-color ) { @include background( linear-gradient( top, lighten($button-bg-color, 10), button-bg-stop-2($button-bg-color) ) ); }
+@mixin button-bg-active   ( $button-bg-color: $button-default-bg-color ) { background: darken($button-bg-color, 40); }

@@ -1,0 +1,52 @@
+@import url(http:/\/fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Exo:200,300,400,500,600,700,800,900,200italic,300italic,400italic,500italic,600italic,900italic,800italic,700italic);
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+//---------------------------------------------------------------------------------
+// import seeds
+@import "base/base"; // reset, color-palette, typography, etc
+@import "themes/monochrome_theme"; // use the base-variables in a selected theme.
+@import "elements/elements"; // define visual styles for elements
+//---------------------------------------------------------------------------------
+// apply visual seeds.
+body { @include body-style; }
+
+h1 { @include typestyle( h1 ); }
+h2 { @include typestyle( h2 ); }
+h3 { @include typestyle( h3 ); }
+h4 { @include typestyle( h4 ); }
+h5 { @include typestyle( h5 ); }
+h6 { @include typestyle( h6 ); }
+
+hr { @include hr-style; }
+a { @include link; }
+blockquote { @include blockquote-style; }
+em { @include em-style; }
+strong { @include strong-style; }
+
+button, input[type=submit], input[type=button] { @include button; }
+
+code {
+  @include text-input-style;
+  @include code-style;
+}//code
+
+input {
+  &[type=text],
+  &[type=password],
+  &[type=email],
+  &[type=number],
+  &[type=search] { @include text-input-style; }
+}//input
+textarea { @include text-input-style; }
+
+table { @include table-style; }
+th { @include typestyle( h3 ); }
+th, td { @include table-cell-style; }
+
+::selection { @include selection-pseudo-style; }
+::-moz-selection { @include selection-pseudo-style; }
+
+//-------------------------------------------------
+// silly shadow dom. inputs are for kids.
+.checkbox-wrapper, .radio-wrapper { @include checkbox-wrapper-style; }

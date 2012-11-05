@@ -1,0 +1,114 @@
+// this file contains
+// custom mixins
+// sass functions
+
+@mixin fill( $position:"absolute" ) {
+  position: $position;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}//@mixin
+
+
+@mixin clearfix( $pseudo:"after" ) {
+  &:#{ $pseudo } {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 1px;
+    clear: both;
+    position: relative;
+  }//&:pseudo
+}//@mixin
+
+
+@mixin padding-kill( $direction:"" ) {
+  @if $direction == horizontal {
+    padding-right: 0;
+    padding-left: 0;
+  }//@if
+
+  @if $direction == vertical {
+    padding-top: 0;
+    padding-bottom: 0;
+  }//@if
+}//@mixin
+
+
+//-------------------------------------------------
+// centering absolute or fixed position elements.
+//
+@mixin vertical-middle( $height ) {
+  top: 50%;
+  margin-top: -($height/2);
+}//@mixin
+@mixin horizontal-center( $width ) {
+  left: 50%;
+  margin-left: -($width/2);
+}//@mixin
+
+
+//---------------------------------------------------
+// bevel borders
+//
+@mixin bevel( $direction, $light-border: $bevel-light-border, $dark-border: $bevel-dark-border ) {
+  @if $direction == "vertical" {
+    &:not(:first-of-type) { border-top: $light-border; }
+    &:not(:last-of-type) { border-bottom: $dark-border; }
+  }//@if
+
+  @if $direction == "horizontal" {
+    &:not(:first-of-type) { border-left: $light-border; }
+    &:not(:last-of-type) { border-right: $dark-border; }
+  }//@if
+
+}//@mixin
+
+
+@mixin bevel-kill( $direction ) {
+  @if $direction == vertical {
+    &, &:not(:first-of-type) { border-top: none; }
+    &, &:not(:last-of-type) { border-bottom: none; }
+  }//@if
+
+  @if $direction == horizontal {
+    &, &:not(:first-of-type) { border-left: none; }
+    &, &:not(:last-of-type) { border-right: none; }
+  }//@if
+}//@mixin
+
+
+//--------------------------------
+// photoshop box-shadow
+//
+// via @heygrady
+// http://heygrady.com/blog/2011/08/06/recreating-photoshop-drop-shadows-in-css3-and-compass/
+//
+@mixin photoshop-drop-shadow ($angle: 0, $distance: 0, $spread: 0, $size: 0, $color: #000, $inner: false) {
+  $angle: (180 - $angle) * pi() / 180; // convert to radians
+  $h-shadow: round(cos($angle) * $distance);
+  $v-shadow: round(sin($angle) * $distance);
+  $css-spread: $size * $spread/100;
+  $blur: ($size - $css-spread);
+  $inset: if($inner != false, 'inset', '');
+  @include box-shadow($h-shadow $v-shadow $blur $css-spread $color unquote($inset));
+}//@mixin
+
+//--------------------------------
+// photoshop text-shadow
+//
+// via @heygrady
+// http://heygrady.com/blog/2011/08/06/recreating-photoshop-drop-shadows-in-css3-and-compass/
+//
+@mixin photoshop-text-shadow ($angle: 0, $distance: 0, $spread: 0, $size: 0, $color: #000) {
+  // NOTE: $spread has no effect for text shadows
+  $angle: (180 - $angle) * pi() / 180;
+  $h-shadow: round(cos($angle) * $distance);
+  $v-shadow: round(sin($angle) * $distance);
+  $css-spread: $size * $spread/100;
+  $blur: ($size - $css-spread);
+  @include text-shadow($h-shadow $v-shadow $blur $color);
+}//@mixin

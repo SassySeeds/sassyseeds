@@ -1,0 +1,57 @@
+//--------------------------------
+// apply to any wrapper class
+// follow the input with a blank span.
+//
+$checkbox-wrapper-z-stack-reset: 0;
+$checkbox-z: 2;
+$checkbox-span-z: 1;
+$checkbox-size: 1.5em;
+
+@mixin checkbox-wrapper-style {
+  position: relative;
+  height: $checkbox-size;
+  width: $checkbox-size;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: $checkbox-wrapper-z-stack-reset;
+  cursor: pointer;
+
+  + label {
+    line-height: $checkbox-size;
+    vertical-align: middle;
+   }
+
+  input {
+    opacity: 0;
+    @include fill( absolute );
+    z-index: $checkbox-z;
+
+    & + span {
+      @include fill( absolute );
+      z-index: $checkbox-span-z;
+      @include text-input-style;
+      padding: 0;
+
+      &:before {
+        content: "";
+        @include fill( absolute );
+        text-align: center;
+        z-index: 1;
+        line-height: $checkbox-size;
+        vertical-align: middle;
+      }//&:before
+    }//+span
+
+    &[type=checkbox]:checked + span:before {
+      content: "#{$checkmark-unicode}";
+    }//&:check+span:before
+
+    //-----------------------------------
+    //radios
+    &[type=radio] {
+      + span { @include border-radius( $checkbox-size/2 ); }
+      &:checked + span:before { content: "#{$radio-circle-unicode}"; }
+    }//&[type=radio]
+
+  }//input
+}//@mixin

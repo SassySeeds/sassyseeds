@@ -1,0 +1,16 @@
+$text-input-padding: 5px 10px;
+$text-input-border-radius: $border-radius;
+$text-input-box-shadow: inset 0 1px 3px 0 rgba(0,0,0, 0.3), 0 1px 2px 0 rgba(255,255,255, .2);
+
+@mixin text-input-style {
+    display: inline-block;
+    padding: $text-input-padding;
+    text-align: left;
+    vertical-align: middle;
+    border: $text-input-border;
+    @include border-radius( $text-input-border-radius );
+    background: $text-input-bg;
+    @include box-shadow( $text-input-box-shadow );
+    @include transition( background .3s );
+    &:focus { background: $text-input-bg-focus; }
+} // @mixin text-input
