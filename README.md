@@ -35,7 +35,7 @@
 
 * Then, import Sassyseeds at the beginning of application.css.scss
 
-    ``` @import "sassyseeds" ```
+    ``` @import "sassyseeds/sassyseeds" ```
 
 This will load compass and all of the files from app/assets/stylesheets/sassyseeds.
 
