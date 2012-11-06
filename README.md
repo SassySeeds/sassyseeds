@@ -6,7 +6,7 @@ The goal of SassySeeds is give you controlled visual-styling of your core-elemen
 This is achieved by using [a standard module definition for Sass](http://thesassway.com/intermediate/a-standard-module-definition-for-sass),
 separating visual and positional styling.
 
-Moar in the [wiki](https://github.com/SassySeeds/sassyseeds/wiki) &rarr;.
+Moar in the [wiki &rarr;](https://github.com/SassySeeds/sassyseeds/wiki)
 
 # Installation
 
