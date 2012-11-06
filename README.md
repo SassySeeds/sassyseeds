@@ -1,4 +1,12 @@
-# Sassyseeds
+# SassySeeds
+
+SassySeeds supplies you with Sass utilities and mixins to begin your app's custom framework.
+
+The goal of SassySeeds is give you controlled visual-styling of your core-elements.
+This is achieved by using [a standard module definition for Sass](http://thesassway.com/intermediate/a-standard-module-definition-for-sass),
+separating visual and positional styling.
+
+Moar in the [wiki](https://github.com/SassySeeds/sassyseeds/wiki) &rarr;.
 
 # Installation
 
