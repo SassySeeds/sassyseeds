@@ -6,11 +6,15 @@
 
 * Add this line to your application's Gemfile:
 
-    ```gem 'sassyseeds', :git => 'git://github.com/SassySeeds/sassyseeds.git' ```
+    ```gem 'sassyseeds' ```
 
 * Then udpate your bundle:
 
     ```$ bundle```
+
+* Or install it yourself
+    ```$ gem install sassyseeds```
+
 
 ## Run the SassySeeds rails generator ##
 
