@@ -1,0 +1,28 @@
+//--------------------------------------------------------
+// blockquote
+// variable pivots
+$blockquote-small-border-radius: $border-radius;
+$blockquote-large-border-radius: $border-radius*5;
+$blockquote-padding-vertical: 20px;
+$blockquote-paddding-horizontal: 10px;
+$blockquote-padding: $blockquote-padding-vertical $blockquote-paddding-horizontal;
+//----------------------------------------------
+
+@mixin blockquote-style {
+  padding: $blockquote-padding;
+  padding: $blockquote-padding;
+
+  font-style: $blockquote-font-style; //located in_typography.scss
+  @include typestyle( h2 ); //located in _typography.scss
+
+  background: $blockquote-bg;
+  @include box-shadow( 0 1px 4px 0 rgba(0,0,0, .4) );
+  @include border-radius(
+    $blockquote-large-border-radius
+    $blockquote-small-border-radius
+    $blockquote-large-border-radius
+    $blockquote-small-border-radius );
+
+  &:before { content: " \"\ "; }
+}//@mixin
+//--------------------------------------------------------

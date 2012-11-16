@@ -2,15 +2,13 @@
 // no positional styling
 
 // some element-styles need their own files
-@import "elements/buttons";
-@import "elements/links";
-@import "elements/lists";
-@import "elements/forms";
-@import "elements/checkbox_radio";
-@import "elements/tables";
-
-// ui elements
-@import "elements/palette_swatch";
+@import "buttons";
+@import "links";
+@import "lists";
+@import "forms";
+@import "checkbox_radio";
+@import "tables";
+@import "blockquote";
 
 @mixin body-style {
   background: $body-bg;
@@ -33,12 +31,6 @@
 
 @mixin em-style { font-style: $em-font-style; }
 @mixin strong-style { font-weight: $bold; }
-
-$blockquote-padding: 20px 10px;
-@mixin blockquote-style {
-  padding: $blockquote-padding;
-  &:before, &:after { content: " \"\ "; }
-}//@mixin
 
 @mixin selection-pseudo-style {
   color: $selection-text-color;

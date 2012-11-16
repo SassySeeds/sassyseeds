@@ -6,7 +6,8 @@
 // import seeds
 @import "base/base"; // reset, color-palette, typography, etc
 @import "themes/monochrome_theme"; // use the base-variables in a selected theme.
-@import "elements/elements"; // define visual styles for elements
+@import "elements/elements"; // define visual styles for elements.
+@import "patterns/patterns"; // useful patterns for building.
 //---------------------------------------------------------------------------------
 // apply visual seeds.
 body { @include body-style; }
@@ -36,8 +37,10 @@ input {
   &[type=password],
   &[type=email],
   &[type=number],
-  &[type=search] { @include text-input-style; }
-}//input
+  &[type=search],
+  &[type=url] { @include text-input-style; }
+}//(input)
+
 textarea { @include text-input-style; }
 
 table { @include table-style; }

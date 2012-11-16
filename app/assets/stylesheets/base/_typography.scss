@@ -46,80 +46,89 @@ $light-text-shadow: 0 -1px rgba($white, .3);
   text-shadow: $light-text-shadow;
 }//@mixin
 
+//-------------------------------------------
+// line-heights
+// defining these as reusable variables can
+// be very helpful for some fragile layouts.
+$hero-line-height: 60px;
+$hero-thick-line-height: $hero-line-height;
+$hero-thin-line-height: $hero-line-height;
+$h1-line-height: 52px;
+$h2-line-height: 34px;
+$h3-line-height: 30px;
+$h4-line-height: 30px;
+$h5-line-height: 24px;
+$h6-line-height: 24px;
+$bodycopy-line-height: 24px;
+
 @mixin typestyle( $style ) {
 
  @if $style == hero-thick {
     font-size: 48px;
-    line-height: 60px;
+    line-height: $hero-thick-line-height;
     font-weight: $demi;
     color: $h136-color;
   }//@if
 
    @if $style == hero-thin {
     font-size: 48px;
-    line-height: 60px;
-    font-weight: 200;
+    line-height: $hero-thin-line-height;
+    font-weight: $light;
     color: $h136-color;
   }//@if
 
    @if $style == h1 {
     font-size: 36px;
-    line-height: 52px;
+    line-height: $h1-line-height;
     font-weight: $demi;
     color: $h136-color;
   }//@if
 
   @if $style == h2 {
     font-size: 26px;
-    line-height: 34px;
+    line-height: $h2-line-height;
     font-weight: $medium;
     color: $h245-color;
   }//@if
 
   @if $style == h3 {
     font-size: 22px;
-    line-height: 30px;
+    line-height: $h3-line-height;
     font-weight: $medium;
     color: $h136-color;
   }//@if
 
   @if $style == h4 {
     font-size: 22px;
-    line-height: 30px;
+    line-height: $h4-line-height;
     font-weight: $demi;
     color: $h245-color;
   }//@if
 
   @if $style == h5 {
     font-size: 18px;
-    line-height: 24px;
+    line-height: $h5-line-height;
     font-weight: $demi;
     color: $h245-color;
   }//@if
 
   @if $style == h6 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: $h6-line-height;
     font-weight: $bold;
     color: $h136-color;
   }//@if
 
   @if $style == bodycopy {
     font-size: 16px;
-    line-height: 24px;
+    line-height: $bodycopy-line-height;
     font-weight: $normal;
     color: $bodycopy-color;
   }//@if
 
   @if $style == codecopy {
     font-size: 12px;
-    line-height: 1;
+    line-height: 1; // reset this for mono
     font-weight: $normal;
   }//@if
-
 }//@mixin
-
-//------------------------------
-// unicode characters
-$checkmark-unicode: \2713;
-$radio-circle-unicode: \25C9;

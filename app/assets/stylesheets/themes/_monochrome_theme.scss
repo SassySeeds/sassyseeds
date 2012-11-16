@@ -73,3 +73,8 @@ $selection-text-color: $body-bg-color;
 $table-bg-texture: $body-bg-texture;
 $table-bg-color: $body-bg-color;
 $table-bg: $table-bg-texture $table-bg-color;
+
+//blockquote
+$blockquote-bg-color: lighten($body-bg-color, 3);
+$blockquote-bg-texture: $body-bg-texture;
+$blockquote-bg: $blockquote-bg-color $blockquote-bg-texture;
