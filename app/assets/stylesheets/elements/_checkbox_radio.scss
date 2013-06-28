@@ -1,11 +1,22 @@
 //--------------------------------
-// apply to any wrapper class
+// apply the mixin to any wrapper class
 // follow the input with a blank span.
 //
+
 $checkbox-wrapper-z-stack-reset: 0;
 $checkbox-z: 2;
 $checkbox-span-z: 1;
-$checkbox-size: 1.5em;
+$checkbox-size: 24px;
+
+$radio-dot-color: $bodycopy-color;
+$radio-dot-size: $checkbox-size*0.7;
+
+$checkmark-color: $bodycopy-color;
+$checkmark-short-side-length: 5px;
+$checkmark-long-side-length: 12px;
+$checkmark-weight: 4px;
+$checkmark-distance-from-left: 8px;
+$checkmark-distance-from-top: 0px;
 
 @mixin checkbox-wrapper-style {
   position: relative;
@@ -43,14 +54,29 @@ $checkbox-size: 1.5em;
     }//+span
 
     &[type=checkbox]:checked + span:before {
-      content: "#{$checkmark-unicode}";
+      left: $checkmark-distance-from-left;
+      top: $checkmark-distance-from-top;
+      width: $checkmark-short-side-length;
+      height: $checkmark-long-side-length;
+      border-width: 0 $checkmark-weight $checkmark-weight 0;
+      border-style: solid;
+      border-color: $checkmark-color;
+      @include transform( rotate(45deg) );
     }//&:check+span:before
 
     //-----------------------------------
     //radios
     &[type=radio] {
       + span { @include border-radius( $checkbox-size/2 ); }
-      &:checked + span:before { content: "#{$radio-circle-unicode}"; }
+      &:checked + span:before {
+        left: ( ( $checkbox-size - $radio-dot-size )/2 ) - $text-input-border-weight;
+        top: ( ( $checkbox-size - $radio-dot-size )/2 ) - $text-input-border-weight;
+        background: $radio-color;
+        content: "";
+        width: $radio-dot-size;
+        height: $radio-dot-size;
+        @include border-radius( $radio-dot-size/2 );
+      }//&:checked + span:before
     }//&[type=radio]
 
   }//input
